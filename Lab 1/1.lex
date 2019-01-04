@@ -4,11 +4,11 @@
 
 
 %%
+"end" {n_w++; return 0;}
 " " {n_s++;}
 \n {n_l++; n_c++;}
 . {n_c++;}
 [a-zA-Z][a-zA-Z0-9]* {n_w++; n_c+= yyleng;}
-"end" {return 0;}
 %%
 
 int yywrap(){} 

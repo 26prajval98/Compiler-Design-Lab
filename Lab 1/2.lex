@@ -7,11 +7,11 @@ NINT "-"" "*[0-9]+
 INT [0-9]+
 
 %%
+"end" {return 0;}
 {PINT} {n_pi++;}
 {NINT} {n_ni++;}
 {PINT}"."{INT} {n_pf++;}
 {NINT}"."{INT} {n_nf++;}
-"end" {return 0;}
 %%
 
 int yywrap(){} 
