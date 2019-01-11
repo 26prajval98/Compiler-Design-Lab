@@ -1,5 +1,5 @@
 %{
-    int valid = 0;
+    int n_valid = 0, n_invalid = 0;
 %}
 
 Day ([0-2][1-9]|"30")
@@ -24,36 +24,33 @@ DDMMFEB {Day}"/02/"{Year}
 	int year = atoi(ty), day = atoi(td);
 	
 	if(day > 29)
-		valid = 0;
+		n_invalid += 1;
 	else if(day = 29 && year%400 == 0)
-		valid = 1;
+		n_valid += 1;
 	else if(day = 29 && year%100 == 0)
-		valid = 0;
+		n_invalid += 1;
 	else if(day = 29 && year%4 == 0)
-		valid = 1;
+		n_valid += 1;
 	else if(day = 29)
-		valid = 0;
+		n_invalid += 1;
 	else
-		valid = 1;
+		n_valid += 1;
 	
 	return 0;
 }
 
-{DDMMYY31} {valid = 1;}
+{DDMMYY31} {n_valid += 1;}
 
-{DDMMYY} {valid = 1;}
+{DDMMYY} {n_valid += 1;}
 
-. {return 0;}
+. {n_invalid += 1;}
 %%
 
 int yywrap(){} 
 int main(){
     yylex();
     
-    if(valid) 
-    	printf("Valid Date\n");\
-    else
-		printf("Invalid Date\n");\
+	printf("Valid Date = %d and Invalid Dates = %d\n", n_valid, n_invalid);
 		    	
     return 0; 
 } 

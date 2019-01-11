@@ -1,6 +1,6 @@
 ## 1.lex
 
-<b>Count number of number of characters, lines, spaces and words (in order of print)</b>
+<b>Count number of characters, lines, spaces and words (in order of print)</b>
 ___
 
 ## 2.lex
