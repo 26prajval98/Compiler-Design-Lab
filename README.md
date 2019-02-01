@@ -1,5 +1,16 @@
-`flex <filename.lex>`
+# 1. lex programs
+`flex <filename.l>`
 
-`cc lex.yy.c`
+`gcc lex.yy.c`
 
-`./a.out`
+`./a.exe`
+
+#2. Yacc (Bison) programs
+
+`bison -d <program_name>.y`
+
+`flex <filename.l> <program_name>.y`
+
+`gcc lex.yy.c <program_name>`
+
+`./a.exe`
