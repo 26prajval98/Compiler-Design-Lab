@@ -1,4 +1,4 @@
-*.c
+*tab.c
 *.out
-*.h
+*tab.h
 *.exe
